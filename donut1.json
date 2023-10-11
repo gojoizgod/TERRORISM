@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A donut chart for attack types with custom colors",
+  "background": "transparent",
+  "data": {
+    "values": [
+      {"attacktype1_txt": "Armed Assault", "count1": 996},
+      {"attacktype1_txt": "Assassination", "count1": 1491},
+      {"attacktype1_txt": "Bombing/Explosion", "count1": 3283},
+      {"attacktype1_txt": "Facility/Infrastructure Attack", "count1": 899},
+      {"attacktype1_txt": "Hijacking", "count1": 54},
+      {"attacktype1_txt": "Hostage Taking (Barricade Incident)", "count1": 100},
+      {"attacktype1_txt": "Hostage Taking (Kidnapping)", "count1": 359}
+    ]
+  },
+  "transform": [{"calculate": "datum.count1 * 100 / 7182", "as": "percentage"}],
+  "hconcat": [
+    {
+      "layer": [
+        {
+          "mark": {"type": "arc", "innerRadius": 70, "outerRadius": 110, "stroke": "black"},
+          "encoding": {
+            "theta": {"field": "percentage", "type": "quantitative", "stack": true},
+            "color": {"field": "attacktype1_txt", "type": "nominal", "scale": {"range": ["#A1CCD1", "#B0D9B1", "#BEADFA", "#FF8080", "#FDCEDF", "#FFC6AC", "#ECEE81"]}},
+            "tooltip": [
+              {"field": "attacktype1_txt", "type": "nominal", "title": "Attack Type"},
+              {"field": "count1", "type": "quantitative", "title": "Count"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 5, "fontSize": 13},
+      "encoding": {
+        "y": {"field": "attacktype1_txt", "type": "nominal", "axis": null},
+        "text": {"field": "attacktype1_txt", "type": "nominal"},
+        "color": {"field": "attacktype1_txt", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "legend": {"disable": true},
+    "view": {"stroke": "transparent"}
+  }
+}

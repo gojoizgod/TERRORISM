@@ -1,0 +1,46 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A donut chart for weapon types with a custom legend",
+  "background": "transparent",
+  "data": {
+    "values": [
+      {"weaptype1_txt": "Chemical", "count3": 20},
+      {"weaptype1_txt": "Explosives", "count3": 3414},
+      {"weaptype1_txt": "Firearms", "count3": 2167},
+      {"weaptype1_txt": "Incendiary", "count3": 1094},
+      {"weaptype1_txt": "Melee", "count3": 66}
+    ]
+  },
+  "transform": [
+    {"calculate": "datum.count3 * 100 / 6761", "as": "percentage"}
+  ],
+  "hconcat": [
+    {
+      "layer": [
+        {
+          "mark": {"type": "arc", "innerRadius": 70, "outerRadius": 110, "stroke": "black"},
+          "encoding": {
+            "theta": {"field": "percentage", "type": "quantitative", "stack": true},
+            "color": {"field": "weaptype1_txt", "type": "nominal","scale": {"range": ["#A1CCD1", "#B0D9B1", "#BEADFA", "#FF8080", "#ECEE81"]}},
+            "tooltip": [
+              {"field": "weaptype1_txt", "type": "nominal", "title": "Weapon Type"},
+              {"field": "count3", "type": "quantitative", "title": "Count"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 5,"fontSize":13},
+      "encoding": {
+        "y": {"field": "weaptype1_txt", "type": "nominal", "axis": null},
+        "text": {"field": "weaptype1_txt", "type": "nominal"},
+        "color": {"field": "weaptype1_txt", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "legend": {"disable": true},
+    "view": {"stroke": "transparent"}
+  }
+}

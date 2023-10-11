@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "config": {
+    "axis": {
+      "labelColor": "white",  
+      "titleColor": "white"
+    },
+    "title": {
+      "color": "white"       
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/gojoizgod/TERROR/main/KILL.csv"
+  },
+  "vconcat": [
+    {
+      "mark": {"type": "area", "color": {
+        "x1": 1,
+        "y1": 1,
+        "x2": 1,
+        "y2": 0,
+        "gradient": "linear",
+        "stops": [
+          {
+            "offset": 0,
+            "color": "#D7BBF5"
+          },
+          {
+            "offset": 1,
+            "color": "#3f098c"
+          }
+        ]
+      },"line": {"color":"#d542ba"}, "point": {"color":"#d542ba"}},
+      "encoding": {
+        "x": {"field": "iyear", "type": "temporal", "title": "Year", "scale": {"domain": {"param": "brush"}}, "axis": {"title": "Year", "tickCount": 10,"gridColor":"gray","gridOpacity":0.4}},
+        "y": {"aggregate": "sum", "field": "nkill", "type": "quantitative", "title": "Cumulative Kills","axis":{"gridColor":"gray","gridOpacity":0.4}},
+        "tooltip": [  
+        {"aggregate": "sum",
+          "field": "nkill",
+          "type": "quantitative", "title": "Number of killed individuals"},
+        {"field": "iyear",
+          "type": "temporal",
+          "title": "Year"}
+      ]
+      },
+      "width": 620,
+      "height": 340
+    },
+    {
+      "width": 620,
+      "height": 80,
+      "mark": {"type": "area", "color": {
+        "x1": 1,
+        "y1": 1,
+        "x2": 1,
+        "y2": 0,
+        "gradient": "linear",
+        "stops": [
+          {
+            "offset": 0,
+            "color": "#e4a4a4"
+          },
+          {
+            "offset": 1,
+            "color": "#662525"
+          }
+        ]
+      },"line": {"color":"#d33c3c"}, "point": {"color":"#de5151"}},
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "encoding": {
+        "x": {"field": "iyear", "type": "temporal", "axis": {"title": "Year", "tickCount": 10,"gridColor":"gray","gridOpacity":0.4}},
+        "y": {
+          "aggregate": "sum",
+          "field": "nkill",
+          "type": "quantitative",
+          "axis": {"tickCount": 3,"gridColor":"gray","gridOpacity":0.4},
+          "title": "Cumulative Kills"
+        }
+      }
+    }
+  ]
+}

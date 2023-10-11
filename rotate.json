@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 600,
+  "config": {
+    
+      "background": "transparent" ,
+  "axis": {
+              "grid": true,
+          "gridColor": "black"
+        },
+        
+    "view": {
+      "stroke": "transparent"
+    }
+      
+  },
+  
+  "projection": {
+    "type": "orthographic",
+    "rotate": {"expr": "[rotate0, rotate1, 0]"}
+    
+  },
+  "params": [
+    {
+      "name": "rotate0",
+      "value": 0,
+      "bind": {"input": "range", "min": -90, "max": 90, "step": 1,"name": "ROTATE ⇔ "}
+    },
+    {
+      "name": "rotate1",
+      "value": 0,
+      "bind": {"input": "range", "min": -90, "max": 90, "step": 1,"name": "ROTATE ⇕ "}
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/gojoizgod/homeworkkkk10/main/deadnationals.csv",
+    "format": {
+      "type": "csv",
+      "parse": {"latitude": "number", "lonitude": "number", "ntype": "number"}
+    }
+  },
+  "layer": [
+    {
+      "data": {"sphere": true},
+      "mark": {"type": "geoshape", "fill": "#A1CCD1","stroke": "transparent"}
+    },
+    {
+      "data": {
+        "name": "world",
+        "url": "world-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "mark": {"type": "geoshape", "fill": "#b3e2b7", "stroke": "black"}
+    },
+    {
+      "mark": {"type": "circle", "color": "#FC2947", "opacity": 0.8},
+      "transform": [
+        {"calculate": "datum.lonitude", "as": "longitude"},
+        {"calculate": "datum.latitude", "as": "latitude"},
+        {
+          "filter": "(rotate0 * -1) - 90 < datum.longitude && datum.longitude < (rotate0 * -1) + 90 && (rotate1 * -1) - 90 < datum.latitude && datum.latitude < (rotate1 * -1) + 90"
+        }
+      ],
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "legend": null,
+          "field": "ntype",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "domain": [0, 100]
+          }
+        },
+        "tooltip": [{"field": "country","title":"Country"},{"field":"ntype","title":"Number of Targeted Attacks"}]
+      }
+    }
+    
+  ]
+}
+
+

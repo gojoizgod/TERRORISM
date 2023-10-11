@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="trial.css">
+   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="vega_lite_vis.js"></script>
+
+    <title>Layout Example</title>
+</head>
+<body>
+    <div class="header">
+        <img src="datafiles/t4.jpg" alt="Global Terrorism">
+        <div class="header-text">
+            <h1>GLOBAL TERRORISM</h1>
+            <p><span class="first-word">TERRORISM</span> is a form of violence and intimidation that seeks to achieve political, ideological, or religious objectives through the deliberate targeting of civilians or non-combatants. It involves the use of fear, terror, and violence to instigate fear in a population and influence the decisions and policies of governments or organizations. Examples of terrorist acts include bombings, assassinations, hijackings, and cyberattacks. Notable terrorist groups include Al-Qaeda, responsible for the 9/11 attacks in the United States, ISIS (Islamic State of Iraq and Syria), known for its global extremist activities, and the Irish Republican Army (IRA), which operated in Northern Ireland and sought to end British rule through violence. Combating terrorism requires international cooperation, intelligence-sharing, and efforts to address the root causes that may drive individuals or groups towards extremism.</p><br>
+        </div>
+    </div>
+    <div class="head1">
+        <p>HISTORY OF ATTACKS IN MAJOR COUNTRIES</p><br>
+    </div>
+    <div class="main-content">
+        <div class="left-col">
+            <div id="map_chart" >
+            </div>
+        </div>
+        <div class="right-col">
+            <p>
+                <span class="first-word2">Terrorism</span> has had a significant impact on countries around the world, including India, the United States, China, Brazil, and Australia. Each of these nations has faced its share of terrorist attacks, with some of them being particularly devastating.
+            </p><br>
+            
+            <ul >
+                <li>
+                    <strong>India: </strong> In 2008, Mumbai witnessed one of the deadliest terrorist attacks when a group of gunmen carried out a coordinated assault, killing over 160 people and injuring hundreds more.
+                </li><br>
+                <li>
+                    <strong>United States: </strong> The infamous 9/11 attacks in 2001 involved the hijacking of four planes by Al-Qaeda terrorists, resulting in nearly 3,000 lives lost, including the World Trade Center tragedy.
+                </li><br>
+                <li>
+                    <strong>China: </strong> China's Xinjiang region has faced terrorism from the East Turkestan Islamic Movement (ETIM). In 2014, a mass stabbing at the Kunming Railway Station left dozens dead.
+                </li><br>
+                <li>
+                    <strong>Brazil: </strong> The 1993 Candelária Church massacre in Rio de Janeiro was a tragic event where gunmen attacked homeless children, leaving eight dead and several injured.
+                </li><br>
+                <li>
+                    <strong>Australia: </strong> The 2014 Sydney hostage crisis, also known as the "Sydney Siege," was a terrorist incident that took place in December 2014 in Sydney, Australia. A lone gunman, Man Haron Monis, held hostages inside a cafe in the central business district of Sydney.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="head1"><p>TYPES OF ATTACKS, TAREGTS & WEAPONS</p></div><br>
+    
+      
+    <div class="charts-container">
+        <div class="chart">
+            <p style="color: #FF1700;font-size: 20px;font-family:Montserrat;text-align:center">ATTACK TYPES</p>
+            <div id="donut1" style="height:300px;width:450px">
+            </div>
+            <p>Terrorist attacks come in various forms, each with its own distinct characteristics:</p>
+
+<ul>
+  <li><strong>Armed Assault:</strong> Involves the use of firearms or other weapons to launch a violent assault, often in public places or against specific targets.</li>
+  
+  <li><strong>Assassination:</strong> Refers to the deliberate killing of an individual, often a prominent figure or public official.</li>
+  
+  <li><strong>Bombing/Explosion:</strong> Entails the use of explosives to inflict widespread damage and casualties, and it is a method frequently employed by terrorists seeking maximum impact.</li>
+  
+  <li><strong>Facility/Infrastructure Attack:</strong> Targets critical infrastructure such as power plants, transportation hubs, or communication networks.</li>
+  
+  <li><strong>Hijacking:</strong> Involves the unlawful seizure of vehicles, typically planes or ships, to make political demands or cause fear.</li>
+  
+  <li><strong>Hostage Taking (Barricade Incident):</strong> Is a tactic where hostages are held in a barricaded location.</li>
+  
+  <li><strong>Hostage Taking (Kidnapping):</strong> Involves the abduction of individuals to pressure governments or organizations for specific concessions.</li>
+</ul>
+
+
+
+              
+        </div>
+        <div class="chart">
+            <p style="color: #FF1700;font-size: 20px;font-family:Montserrat;text-align:center">TARGET TYPES</p>
+            <div id="donut2" style="height:300px;width:450px">
+            </div>
+            <p>Terrorist attacks target several different aspects, causing damage and harm.</p>
+
+
+<ul>
+  <li><strong>Airports & Aircraft:</strong> Targets aviation-related facilities and vehicles, often for disruption or destruction.</li>
+  
+  <li><strong>Business:</strong> Includes attacks on commercial enterprises, such as companies and industries.</li>
+  
+  <li><strong>Educational Institution:</strong> Involves attacks on schools, colleges, and other educational facilities.</li>
+  
+  <li><strong>Government:</strong> Targets government buildings, officials, or institutions as a political statement.</li>
+  
+  <li><strong>Journalists & Media:</strong> Attacks on journalists, media organizations, or outlets to control information dissemination.</li>
+  
+  <li><strong>Military:</strong> Targets armed forces, military installations, or personnel as part of a conflict.</li>
+  
+  <li><strong>Police:</strong> Involves attacks on law enforcement agencies or officers.</li>
+  
+  <li><strong>Private Citizens & Property:</strong> Includes attacks on civilians and their personal belongings.</li>
+  
+  <li><strong>Religious Figures/Institutions:</strong> Targets religious leaders, places of worship, or religious gatherings.</li>
+  
+  <li><strong>Terrorists/Non-State Militia:</strong> Attacks by one terrorist group on another or by non-state militias.</li>
+  
+  <li><strong>Tourists:</strong> Targets tourists or tourist destinations to undermine local economies.</li>
+  
+  <li><strong>Transportation:</strong> Involves attacks on transportation infrastructure, such as trains, buses, or subways.</li>
+  
+  <li><strong>Utilities:</strong> Targets utilities like power plants, water supplies, or communication systems.</li>
+</ul>
+
+
+
+
+        </div>
+        <div class="chart">
+            <p style="color: #FF1700;font-size: 20px;font-family:Montserrat;text-align:center">WEAPON TYPES</p>
+            <div id="donut3" style="height:300px;width:450px">
+            </div>
+            <p>Terrorist attacks employ various weapon types, each with its own characteristics and effects.</p>
+
+
+
+<ul>
+  <li><strong>Chemical:</strong> Involves the use of chemical substances as weapons, which can have toxic or harmful effects.</li>
+  
+  <li><strong>Explosives:</strong> Includes the use of explosive devices to create powerful blasts, causing widespread damage.</li>
+  
+  <li><strong>Firearms:</strong> Utilizes guns and firearms to launch armed attacks, often with lethal consequences.</li>
+  
+  <li><strong>Incendiary:</strong> Involves the use of fire or incendiary devices to ignite and spread fires, causing destruction.</li>
+  
+  <li><strong>Melee:</strong> Refers to close combat or hand-to-hand combat using weapons like knives, clubs, or other melee weapons.</li>
+</ul>
+
+
+
+        </div>
+    </div>
+    <!-- Text above the three chart container -->
+
+    <div class="head1"><p>SOME OF THE WORST ATTACKS IN HISTORY</p></div>
+
+<div class="charts-container">
+    <div class="chart">
+        <img src="datafiles/World-Trade-Center.jpg" alt="Global Terrorism" style="height: 360px;width: 550px;" >
+        
+    </div>
+    <div class="chart" style="margin-bottom: 0px; padding: 0px">
+        <p style="margin-bottom: 0px; padding: 0px;font-size: 18px;font-weight: bolder;color:#FF1700;">The 9/11 Attacks</p><br>
+        <ul style="margin-bottom: 0px; padding: 0px">
+            <li ><strong>Date:</strong> September 11, 2001</li>
+            <li><strong>Location:</strong> United States</li>
+            <li><strong>Attacks:</strong>
+                   <ul style="margin-bottom: 0px;"> <li>Four commercial airplanes hijacked by 19 terrorists.</li>
+                    <li>American Airlines Flight 11 and United Airlines Flight 175 crashed into the World Trade Center towers in New York City.</li>
+                    <li>American Airlines Flight 77 crashed into the Pentagon in Arlington, Virginia.</li>
+                    <li>United Airlines Flight 93, prevented from reaching its target, crashed into a field in Pennsylvania.</li>
+                </ul>
+            </li>
+            <li><strong>Perpetrators:</strong> Associated with the extremist group Al-Qaeda.</li>
+            <li><strong>Casualties:</strong>
+                <ul style="margin-bottom: 0px; ">
+                    <li>Nearly 3,000 lives lost.</li>
+                    <li>Thousands of people wounded.</li>
+                </ul>
+
+            <li><strong>Impact:</strong> Profoundly influenced U.S. foreign policy, led to the War on Terror, and shaped global security efforts.</li>
+        </ul>
+        
+    </div>
+</div>
+<div class="charts-container">
+    <div class="chart">
+        <img src="datafiles/mumb.jpg" alt="Global Terrorism" style="height: 360px;width: 550px;">
+        
+    </div>
+    <div class="chart">
+        <p style="margin-bottom: 0px; padding: 0px;font-size: 18px;font-weight: bolder;color:#FF1700;">The Mumbai 26/11 Attacks</p><br>
+<ul style="margin-bottom: 0px; padding: 0px">
+    <li ><strong>Date:</strong> November 26, 2008</li>
+    <li><strong>Location:</strong> Mumbai, India</li>
+    <li><strong>Attacks:</strong>
+        <ul style="margin-bottom: 0px;"> 
+            <li>A series of coordinated attacks by ten terrorists in various locations across Mumbai, including luxury hotels, a railway station, and a Jewish community center.</li>
+            <li>The attackers used firearms, grenades, and explosives to target civilians and security personnel.</li>
+            <li>The iconic Taj Mahal Palace Hotel and Oberoi Trident Hotel were among the major targets.</li>
+        </ul>
+    </li>
+    <li><strong>Perpetrators:</strong> The attackers were affiliated with the Pakistan-based terrorist group Lashkar-e-Taiba.</li>
+    <li><strong>Casualties:</strong>
+        <ul style="margin-bottom: 0px; ">
+            <li>166 people were killed during the attacks.</li>
+            <li>More than 300 people were wounded.</li>
+        </ul>
+    </li>
+    <li><strong>Impact:</strong> The Mumbai 26/11 attacks had a significant impact on India's security policies, led to improved counter-terrorism efforts, and strained relations between India and Pakistan.</li>
+</ul>
+
+    </div>
+</div>
+<div class="head1"><p>DEATHS AND WOUNDS</p></div>
+<div class="charts-container">
+    
+    <div class="chart">
+        <p style="margin-bottom: 0px; padding: 0px;font-size: 18px;font-weight: bolder;color:#FF1700;text-align: center;">DEATHS</p>
+        <div id="area_chart">
+        </div>
+    </div>
+    <div class="chart">
+        <p style="margin-bottom: 0px; padding: 0px;font-size: 18px;font-weight: bolder;color:#FF1700;;text-align: center;">WOUNDS</p>
+        <div id="area_chart2">
+        </div>
+    </div>
+    <!-- Add more charts as needed -->
+</div>
+<div class="head1">
+    <p>TARGETED NATIONALITIES</p><br>
+</div>
+<div class="main-content">
+    <div class="left-col">
+        <p>
+            <span class="first-word2">Terrorist attacks</span> often target specific nationalities for various reasons, including political, ideological, religious, or cultural motivations. These attacks can have devastating consequences for the individuals and nations involved.
+        </p><br>
+        <p><span class="first-word2">Terrorist attacks</span> frequently single out specific nationalities as their victims, with motivations ranging from political agendas to religious extremism. These attacks aim to instill fear, spread propaganda, or advance a particular ideology. Such acts of violence can lead to tragic loss of life, injuries, and long-lasting psychological and social impacts on both the targeted nationality and the global community. Counterterrorism efforts often focus on identifying and mitigating the risks associated with nationality-based attacks, emphasizing international cooperation and intelligence sharing to enhance security and protect vulnerable populations.</p>
+        <br><br><br>
+        <img src="datafiles/tar.jpg">
+        
+    </div>
+    <div class="right-col">
+        <div id="rot" >
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="head1">
+    <p>TERRORIST ACTIVITY OF MAJOR ORGANIZATIONS</p><br>
+    <p style="font-size: 16px;font-weight: bolder;color:#FF1700;">Click the terrorist organization in the legend</p>
+</div>
+
+<!-- Two columns with one chart on the right and text on the left -->
+<div class="main-content">
+    <div class="left-col">
+        <div id="orgy">
+        </div>
+    </div>
+    <div class="right-col">
+        <ul>
+            <li>
+                <p><strong>Al-Qaeda:</strong> A transnational extremist group founded by Osama bin Laden, with a global presence. Notable for the 9/11 attacks in the U.S.</p>
+            </li><br>
+            <li>
+                <p><strong>Al-Shabaab:</strong> An Islamist militant group based in East Africa, primarily active in Somalia. Known for multiple attacks in the region.</p>
+            </li><br>
+            <li>
+                <p><strong>Boko Haram:</strong> An Islamist extremist group operating in Nigeria, Niger, Chad, and Cameroon. Responsible for numerous attacks in the region.</p>
+            </li><br>
+            <li>
+                <p><strong>Hamas:</strong> A Palestinian political and military organization, known for its presence in the Gaza Strip and the West Bank.</p>
+            </li><br>
+            <li>
+                <p><strong>PKK (Kurdistan Workers' Party):</strong> A Kurdish militant organization fighting for greater autonomy in Turkey and neighboring regions.</p>
+            </li><br>
+            <li>
+                <p><strong>LeT (Lashkar-e-Taiba):</strong> A Pakistan-based militant group with a history of attacks in India, including the 2008 Mumbai attacks.</p>
+            </li><br>
+            <li>
+                <p><strong>NPA (New People's Army):</strong> A communist guerrilla group in the Philippines, engaged in insurgency and armed conflict.</p>
+            </li><br>
+            <li>
+                <p><strong>FARC (Revolutionary Armed Forces of Colombia):</strong> A leftist guerrilla group formerly active in Colombia, involved in a long-running armed conflict.</p>
+            </li><br>
+            <li>
+                <p><strong>Taliban:</strong> An Islamist group with a history of insurgency in Afghanistan and parts of Pakistan. Led by different individuals over the years.</p>
+            </li>
+        </ul>
+        
+    </div>
+</div>
+
+<!-- Text in two columns -->
+<div class="final-text">
+    <div class="left-column">
+        <p><span class="first-word">TERRORISM</span>, a formidable global challenge, has left an indelible mark on the world. It is a multifaceted problem that transcends borders, ideologies, and cultures, posing threats to the security and stability of nations. Terrorism takes on various forms, from suicide bombings and cyberattacks to insurgency and hostage situations. Addressing this menace requires a multifaceted approach, involving not just military and intelligence responses but also efforts to address the root causes. Socioeconomic disparities, political conflicts, and religious extremism often fuel terrorism, making it crucial to work toward lasting solutions.
+
+            In the fight against terrorism, international cooperation and intelligence sharing play pivotal roles. Nations collaborate to prevent attacks, dismantle terrorist networks, and bring perpetrators to justice. Yet, it is equally important to promote dialogue, understanding, and tolerance among communities and nations. </p>
+            
+
+    </div>
+    <div class="right-column">
+        <p>Building a world free from the fear of terrorist acts necessitates education, empathy, and opportunities for those susceptible to extremist ideologies. Governments, civil society, and individuals must work hand in hand to counter radicalization, rehabilitate former extremists, and create an environment of peace and security.
+            
+            As we confront terrorism, it is vital to remember that this battle is ongoing, evolving as new threats emerge. Nevertheless, resilience, unity, and the commitment to shared human values can help us create a safer, more peaceful world. By addressing the root causes, strengthening international partnerships, and promoting peace, we can make significant strides toward a future where terrorism holds no sway over our lives, and we can live in a world free from the shadow of terror.</p>
+    </div>
+</div>
+<footer>
+    <p>A data visualization by Sejal Deshpande.</p>
+    <p>Data sourced from <a href="https://www.kaggle.com/datasets/START-UMD/gtd" target="_blank">Global Terrorism Database (GTD)</a>.</p>
+</footer>
+</body>
+</html>
